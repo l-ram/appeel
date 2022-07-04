@@ -1,5 +1,5 @@
 import React from 'react';
-import './Repo.scss';
+import './Repo.css';
 
 const Repo = ({Title, Description, Public, Language, Date}) => {
 	return (

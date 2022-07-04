@@ -1,6 +1,6 @@
 import React from 'react';
 import Repo from './Repo';
-import './RepoList.scss';
+import './RepoList.css';
 
 const RepoList = ({ repos, commits }) => {
 	return (

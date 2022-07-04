@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import ParticleBackground from './Components/ParticleBackground/ParticleBackground';
-import './App.scss';
+import './App.css';
 import Title from './Components/Dashboard/Title';
 import Sidebar from './Components/Dashboard/Sidebar';
 import RepoList from './Components/Dashboard/RepoList';
 import SearchBox from './Components/Dashboard/SearchBox';
+import Logo from './Components/Dashboard/Logo';
 
 class App extends Component {
   constructor() {
@@ -31,15 +32,21 @@ render () {
 		return  repos.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
 	})
     return(
-    <div class="App">
-      <ParticleBackground className ="particles"/>
-      <div class="flex1"><Title></Title></div>
-      <div class="flex2"><Sidebar></Sidebar></div>
-      <div class="flex3">
-        <SearchBox searchChange={this.onSearchChange}/>
-        <RepoList repos={filteredRepos}/>
-      </div>
+  <div>
+
+    <div class="logo">
+      <div class="flex-logo"><Logo></Logo></div>
     </div>
+      <div class="App">
+        <ParticleBackground className ="particles"/>  
+        <div class="flex1"><Title></Title></div>
+        <div class="flex2"><Sidebar></Sidebar></div>
+        <div class="flex3">
+          <SearchBox searchChange={this.onSearchChange}/>
+          <RepoList repos={filteredRepos}/>
+        </div>
+      </div>
+  </div>
   );
 }
 

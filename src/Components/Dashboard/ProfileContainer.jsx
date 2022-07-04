@@ -1,5 +1,5 @@
 import React from "react";
-import './ProfileContainer.scss';
+import './ProfileContainer.css';
 import Avatar from './assets/Avatar.jpg';
 
 const ProfileContainer = () => {
