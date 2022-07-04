@@ -2,15 +2,16 @@ import React from 'react';
 import Repo from './Repo';
 import './RepoList.css';
 
-const RepoList = ({ repos, commits }) => {
+const RepoList = ({ repos, commits, onClickRepo }) => {
 	return (
 		<div class="container">
-			<h2>Your Repositories</h2>
+			<h3>Your Repositories</h3>
 			{
 				repos.map((user, i) => {
 					return (
 						<Repo
 							key={1}
+							onClickTitle={() => onClickRepo(repos[i])}
 							Title={repos[i].name}
 							Description={repos[i].description}
 							Public={repos[i].public}

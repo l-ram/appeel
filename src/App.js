@@ -5,7 +5,7 @@ import Title from './Components/Dashboard/Title';
 import Sidebar from './Components/Dashboard/Sidebar';
 import RepoList from './Components/Dashboard/RepoList';
 import SearchBox from './Components/Dashboard/SearchBox';
-// import Logo from './Components/Dashboard/Logo';
+import FocusedRepo from './Components/FocusedRepo';
 
 class App extends Component {
   constructor() {
@@ -13,7 +13,8 @@ class App extends Component {
       this.state = {
         repos: [],
         commits: [],
-        searchfield: ''
+        searchfield: '',
+        FocusedRepo: null
       }
   };
 
@@ -27,6 +28,10 @@ componentDidMount() {
     this.setState({searchfield: event.target.value });
   }
 
+  onClickRepo = (repo) => {
+    this.setState({FocusedRepo: repo})
+  }
+
 render () {
   const filteredRepos = this.state.repos.filter(repos => {
 		return  repos.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
@@ -38,7 +43,8 @@ render () {
         <div class="flex2"><Sidebar></Sidebar></div>
         <div class="flex3">
           <SearchBox searchChange={this.onSearchChange}/>
-          <RepoList repos={filteredRepos}/>
+          {!this.state.FocusedRepo && <RepoList repos={filteredRepos} onClickRepo={this.onClickRepo}/>}
+          {this.state.FocusedRepo && <FocusedRepo repo={this.state.FocusedRepo}/>}
         </div>
       </div>
   );
