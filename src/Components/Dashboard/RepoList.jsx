@@ -1,6 +1,5 @@
 import React from 'react';
 import Repo from './Repo';
-import Commits from './Commits';
 import './RepoList.scss';
 
 const RepoList = ({ repos, commits }) => {
@@ -21,21 +20,6 @@ const RepoList = ({ repos, commits }) => {
 					);
 				})
 			}
-			{
-				repos.map((user, i) => {
-					return (
-						<Repo
-							key={1}
-							Title={repos[i].name}
-							Description={repos[i].description}
-							Public={repos[i].public}
-							Language={repos[i].language}
-							Date={repos[i].created_at}
-						/>
-					);
-				})
-			}
-
 		</div>
 	)
 }

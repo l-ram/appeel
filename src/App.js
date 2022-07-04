@@ -20,14 +20,7 @@ componentDidMount() {
     fetch('https://api.github.com/users/l-ram/repos')
     .then(response => response.json())
     .then(users => this.setState({ repos: users}));
-
-    fetch(`https://api.github.com/repos/l-ram/${this.repos}/commits`)
-    .then(response => response.json())
-    .then(users => this.setState({ commits: users}));
 }
-
-
-
 
   onSearchChange = (event) => {
     this.setState({searchfield: event.target.value });
