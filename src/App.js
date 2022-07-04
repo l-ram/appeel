@@ -5,7 +5,7 @@ import Title from './Components/Dashboard/Title';
 import Sidebar from './Components/Dashboard/Sidebar';
 import RepoList from './Components/Dashboard/RepoList';
 import SearchBox from './Components/Dashboard/SearchBox';
-import Logo from './Components/Dashboard/Logo';
+// import Logo from './Components/Dashboard/Logo';
 
 class App extends Component {
   constructor() {
@@ -32,11 +32,6 @@ render () {
 		return  repos.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
 	})
     return(
-  <div>
-
-    <div class="logo">
-      <div class="flex-logo"><Logo></Logo></div>
-    </div>
       <div class="App">
         <ParticleBackground className ="particles"/>  
         <div class="flex1"><Title></Title></div>
@@ -46,10 +41,8 @@ render () {
           <RepoList repos={filteredRepos}/>
         </div>
       </div>
-  </div>
   );
-}
-
+    }
 };
 
 export default App;
