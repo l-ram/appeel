@@ -1,0 +1,36 @@
+.profileContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.profileContainer img {
+    display: absolute;
+    border-radius: 25rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.name {
+    text-align: center;
+    font-size: 2vw;
+}
+
+.title{
+    text-align: center;
+    font-size: 1.5vw;
+}
+
+.following{
+    font-size: 1.25vw;
+}
+
+.followers{
+    font-size: 1.25vw;
+}
