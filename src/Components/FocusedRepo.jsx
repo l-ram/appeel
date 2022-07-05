@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import './FocusedRepo.css';
 
 function FocusedRepo(props) {
     const {repo} = props;
@@ -14,11 +15,11 @@ function FocusedRepo(props) {
     console.log(repo)
 
     return (
-        <div>
+        <div class="focusedrepo">
             <h3>{repo.name}</h3>
             {commits.map(commit => (
                 <div>
-                    <p>{commit.commit.author.date}</p>
+                    <p class="date">{commit.commit.author.date}</p>
                     <p>{commit.commit.message}</p>
                 </div>
             ))}

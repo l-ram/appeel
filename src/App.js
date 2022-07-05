@@ -38,7 +38,7 @@ render () {
 	})
     return(
       <div class="App">
-        <ParticleBackground className ="particles"/>  
+        <ParticleBackground className ="particles"/>
         <div class="flex1"><Title></Title></div>
         <div class="flex2"><Sidebar></Sidebar></div>
         <div class="flex3">
